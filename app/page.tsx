@@ -29,7 +29,7 @@ export default function Home() {
               Features
             </a>
             <a
-              href="#download"
+              href="https://expo.dev/artifacts/eas/82xV4wGeznrpwsEADVupiz.apk"
               className="rounded-full bg-black px-6 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90"
             >
               Download
@@ -57,10 +57,13 @@ export default function Home() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col gap-3 sm:flex-row">
-                <button className="flex items-center justify-center gap-2 rounded-full bg-black px-8 py-3 font-semibold text-primary-foreground hover:opacity-90 transition-opacity cursor-pointer">
+                <a
+                  href="https://expo.dev/artifacts/eas/82xV4wGeznrpwsEADVupiz.apk"
+                  className="flex items-center justify-center gap-2 rounded-full bg-black px-8 py-3 font-semibold text-primary-foreground hover:opacity-90 transition-opacity cursor-pointer"
+                >
                   <Download className="h-5 w-5" />
                   Download Now
-                </button>
+                </a>
                 {/* <button className="flex items-center justify-center gap-2 rounded-full border-2 border-primary px-8 py-3 font-semibold text-primary hover:bg-primary/5 transition-colors">
                   Learn More
                 </button> */}
@@ -220,10 +223,14 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-4 mb-8">
-            <button className="flex items-center justify-center gap-2 rounded-full bg-black px-8 py-3 font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
+            <a
+              href="https://expo.dev/artifacts/eas/82xV4wGeznrpwsEADVupiz.apk"
+              target="_blank"
+              className="flex items-center justify-center gap-2 rounded-full bg-black px-8 py-3 font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+            >
               <Download className="h-5 w-5" />
               Download Now
-            </button>
+            </a>
             <a
               href="#features"
               className="flex items-center justify-center gap-2 rounded-full border-2 border-primary px-8 py-3 font-semibold text-primary hover:bg-primary/5 transition-colors"
