@@ -10,7 +10,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2">
-            <Image src="/images/komin.jpg" alt="Ko-MIn D.I.Y Store Logo" width={40} height={40} className="h-10 w-10" />
+            <Image src="/images/komin.jpg" alt="Ko-Min D.I.Y Store Logo" width={40} height={40} className="h-10 w-10" />
             <span className="hidden text-xl font-bold sm:inline">Ko-Min D.I.Y Store</span>
           </div>
           <div className="flex items-center gap-4">
@@ -182,14 +182,14 @@ export default function Home() {
           <div className="mb-12">
             <Image
               src="/images/komin.jpg"
-              alt="Ko-MIn D.I.Y Store"
+              alt="Ko-Min D.I.Y Store"
               width={80}
               height={80}
               className="mx-auto h-20 w-20 mb-6"
             />
             <h2 className="text-4xl font-bold tracking-tight mb-4">Ready to Shop Smart?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Download Ko-MIn D.I.Y Store today and discover the easiest way to buy electric parts and tools in Myanmar.
+              Download Ko-Min D.I.Y Store today and discover the easiest way to buy electric parts and tools in Myanmar.
             </p>
           </div>
 
@@ -219,7 +219,7 @@ export default function Home() {
               <a href="/privacy-policy" className="hover:text-foreground transition-colors">
                 Privacy
               </a>
-              <a href="#" className="hover:text-foreground transition-colors">
+              <a href="/terms-and-conditions" className="hover:text-foreground transition-colors">
                 Terms
               </a>
               <a href="#" className="hover:text-foreground transition-colors">
