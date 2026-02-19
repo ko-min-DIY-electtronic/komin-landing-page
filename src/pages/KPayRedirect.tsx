@@ -1,23 +1,18 @@
-"use client";
-
-import { useEffect, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 
 function KPayRedirectContent() {
-    const searchParams = useSearchParams();
+    const [searchParams] = useSearchParams();
 
     useEffect(() => {
         const prepay_id = searchParams.get("prepay_id");
-        const merch_order_id = searchParams.get("merch_order_id");
-        const appid = searchParams.get("appid");
         const sign = searchParams.get("sign");
 
         if (prepay_id && sign) {
-            const kpayPwaUrl = `https://static.kbzpay.com/pgw/pwa/#/?prepay_id=${prepay_id}&merch_order_id=${merch_order_id}&appid=${appid}&sign=${sign}`;
+            // We pass all received parameters to the KBZPay PWA URL
+            const kpayPwaUrl = `https://static.kbzpay.com/pgw/pwa/#/?${searchParams.toString()}`;
 
-            // We use a small timeout to let the user see the "connecting" message
-            // and to ensure the component is fully mounted.
             const timer = setTimeout(() => {
                 window.location.href = kpayPwaUrl;
             }, 1500);
@@ -50,12 +45,14 @@ function KPayRedirectContent() {
                     <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-200 animate-bounce">
                         <img src="/images/kpay-logo.png" alt="KBZPay" className="w-12 h-12 object-contain brightness-0 invert"
                             onError={(e) => {
-                                // Fallback to Icon if image doesn't exist
-                                e.currentTarget.style.display = 'none';
-                                e.currentTarget.parentElement?.classList.add('flex-col');
-                                const icon = document.createElement('div');
-                                icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>';
-                                e.currentTarget.parentElement?.appendChild(icon.firstChild as Node);
+                                const target = e.currentTarget;
+                                target.style.display = 'none';
+                                if (target.parentElement) {
+                                    target.parentElement.classList.add('flex-col');
+                                    const icon = document.createElement('div');
+                                    icon.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallet"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>';
+                                    if (icon.firstChild) target.parentElement.appendChild(icon.firstChild);
+                                }
                             }}
                         />
                     </div>
@@ -83,12 +80,6 @@ function KPayRedirectContent() {
 
 export default function KPayRedirectPage() {
     return (
-        <Suspense fallback={
-            <div className="flex items-center justify-center min-h-screen">
-                <Loader2 className="w-10 h-10 animate-spin text-blue-600" />
-            </div>
-        }>
-            <KPayRedirectContent />
-        </Suspense>
+        <KPayRedirectContent />
     );
 }
