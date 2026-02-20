@@ -11,7 +11,7 @@ function KPayRedirectContent() {
 
         if (prepay_id && sign) {
             // We pass all received parameters to the KBZPay PWA URL
-            const kpayPwaUrl = `https://static.kbzpay.com/pgw/pwa/#/?${searchParams.toString()}`;
+            const kpayPwaUrl = `https://static.kbzpay.com/pgw/uat/pwa/#/?${searchParams.toString()}`;
 
             const timer = setTimeout(() => {
                 window.location.href = kpayPwaUrl;
