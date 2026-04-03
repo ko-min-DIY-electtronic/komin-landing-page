@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import KPayRedirect from "./pages/KPayRedirect";
+import KPaySuccess from "./pages/KPaySuccess";
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                 <Route path="/kpay-redirect" element={<KPayRedirect />} />
+                <Route path="/kpay-success" element={<KPaySuccess />} />
             </Routes>
         </Router>
     );
