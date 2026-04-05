@@ -14,6 +14,7 @@ function App() {
                 <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                 <Route path="/kpay-redirect" element={<KPayRedirect />} />
                 <Route path="/kpay-success" element={<KPaySuccess />} />
+                <Route path="/payment_result" element={<KPaySuccess />} />
             </Routes>
         </Router>
     );
