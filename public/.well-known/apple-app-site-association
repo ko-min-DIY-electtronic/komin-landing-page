@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "THETEAMID.com.komin.diy",
+        "paths": ["/kpay-success*", "/payment_result*", "*"]
+      }
+    ]
+  }
+}
