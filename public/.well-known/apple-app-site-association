@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "THETEAMID.com.komin.diy",
+        "appID": "THETEAMID.com.diykomin.store",
         "paths": ["/kpay-success*", "/payment_result*", "*"]
       }
     ]

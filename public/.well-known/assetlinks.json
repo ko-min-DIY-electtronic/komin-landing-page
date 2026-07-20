@@ -1,13 +1,11 @@
 [
   {
-    "relation": [
-      "delegate_permission/common.handle_all_urls"
-    ],
+    "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.komin.diystore",
+      "package_name": "com.diykomin.store",
       "sha256_cert_fingerprints": [
-        "57:B3:31:E0:AB:AF:98:62:33:EE:60:92:EB:A9:1F:62:6E:18:B7:69:7F:80:D1:73:32:9E:E8:50:B0:E3:72:4F"
+        "4A:DA:17:17:AA:8A:A2:67:94:EB:62:C5:95:95:72:BB:71:1A:12:A2:2D:9C:D5:D6:C2:E8:DF:06:78:95:AC:8C"
       ]
     }
   }
